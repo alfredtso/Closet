@@ -12,7 +12,11 @@ public class Dress extends Items {
         super(des, price, year, month, day);
         setType(Wardrobe.Dress);
         setSize(size);
-        this.washBehaviour = new DryWash();
+        this.washBehaviour = new WaterWash();
+    }
+
+    public void setWashBehaviour(WashBehaviour washBehaviour) {
+        this.washBehaviour = washBehaviour;
     }
 
     public void performWash() {
