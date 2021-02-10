@@ -1,3 +1,5 @@
+package simple;
+
 public class Book extends Stuff{
     private String bookName;
     public Book(String name) {

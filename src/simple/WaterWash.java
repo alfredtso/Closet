@@ -1,3 +1,5 @@
+package simple;
+
 public class WaterWash implements WashBehaviour{
 
     @Override

@@ -1,3 +1,5 @@
+package simple;
+
 import java.util.Random;
 
 public abstract class Stuff {

@@ -1,3 +1,5 @@
+package simple;
+
 public class DryWash implements WashBehaviour{
     @Override
     public void lastWashed() {
