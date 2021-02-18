@@ -14,6 +14,9 @@ public class ItemStore {
 
         item = factory.createItem(type);
 
+        // Call some methods on item
+        item.getPrice();
+
         return item;
     }
 }
