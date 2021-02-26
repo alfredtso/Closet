@@ -27,6 +27,7 @@ public class MyStringList extends AbstractList<String> {
     public String set(int index, String item) {
         String old = myList[index];
         myList[index] = item;
+        Arrays.stream(myList).iterator();
         // again random stuff
         mySecondList.set(index, item);
         return old;
