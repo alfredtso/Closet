@@ -40,7 +40,7 @@ public class DinerMenu implements Menu {
         return menuItems;
     }
 
-    public Iterator createIterator() {
+    public DinerMenuIterator createIterator() {
         return new DinerMenuIterator(menuItems);
         // To test Alternating menu items, comment out above line,
         // and uncomment the line below.

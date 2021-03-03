@@ -2,6 +2,7 @@ package iterator;
 
 
 import java.awt.*;
+import java.util.Iterator;
 
 public class Waitress {
     Menu pancakeHouseMenu;
@@ -13,8 +14,8 @@ public class Waitress {
     }
 
     public void printMenu() {
-        Iterator pancakeIterator = pancakeHouseMenu.createIterator();
-        Iterator dinerIterator = dinerMenu.createIterator();
+        Iterator<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
+        Iterator<MenuItem> dinerIterator = dinerMenu.createIterator();
 
         System.out.println("MENU\n----\nBREAKFAST");
         printMenu(pancakeIterator);
@@ -23,7 +24,7 @@ public class Waitress {
 
     }
 
-    private void printMenu(Iterator iterator) {
+    private void printMenu(Iterator<MenuItem> iterator) {
         while (iterator.hasNext()) {
             MenuItem menuItem = iterator.next();
             System.out.print(menuItem.getName() + ", ");
@@ -50,7 +51,7 @@ public class Waitress {
     }
 
 
-    private void printVegetarianMenu(Iterator iterator) {
+    private void printVegetarianMenu(Iterator<MenuItem> iterator) {
         while (iterator.hasNext()) {
             MenuItem menuItem = iterator.next();
             if (menuItem.isVegetarian()) {
@@ -61,7 +62,7 @@ public class Waitress {
         }
     }
 
-    private boolean isVegetarian(String name, Iterator iterator) {
+    private boolean isVegetarian(String name, Iterator<MenuItem> iterator) {
         while (iterator.hasNext()) {
             MenuItem menuItem = iterator.next();
             if (menuItem.getName().equals(name)) {

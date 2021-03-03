@@ -1,6 +1,8 @@
 package iterator;
 
-public class DinerMenuIterator implements Iterator {
+import java.util.Iterator;
+
+public class DinerMenuIterator implements Iterator<MenuItem> {
     MenuItem[] items;
     int position = 0;
 
@@ -19,5 +21,9 @@ public class DinerMenuIterator implements Iterator {
     @Override
     public MenuItem next() {
         return items[position++];
+    }
+
+    public void remove() {
+        throw new UnsupportedOperationException("No, you should not");
     }
 }
