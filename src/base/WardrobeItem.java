@@ -69,5 +69,6 @@ public class WardrobeItem extends Stuff{
         WardrobeItem dress = factory.createWardrobeItem(WardrobeItemType.DRESS, "Black",
                 500, 2021, 3, 8, "M");
         System.out.println(dress.getDescription());
+        System.out.println(dress.getUuid());
     }
 }
