@@ -1,7 +1,8 @@
 package state;
 
 public class SoldState implements State {
-    GumballMachine gumballMachine;
+    private static final long serialVersionUID = 5L;
+    transient GumballMachine gumballMachine;
 
     public SoldState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;

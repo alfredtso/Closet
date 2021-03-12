@@ -1,4 +1,4 @@
-package simple;
+package strategy;
 
 public class WaterWash implements WashBehaviour{
 

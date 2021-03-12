@@ -1,15 +1,23 @@
-package simple;
+package base;
+
+import factory.SimpleWardrobeFactory;
 
 import java.time.LocalDate;
+/* TODO
+- Scan receipt and get price, purchase day, description and thus type
+ */
+public class WardrobeItem extends Stuff{
 
-public class Items extends Stuff{
+    public enum WardrobeItemType {
+        DRESS, SHORTS, BLAZER, SHOES
+    }
 
     private double price;
     private LocalDate purchaseDay;
     private String description;
-    private Wardrobe type;
+    private WardrobeItemType type;
 
-    public Items(String description, double price, int year, int month, int day)
+    public WardrobeItem(String description, double price, int year, int month, int day)
     {
         super();
         this.description = description;
@@ -41,18 +49,25 @@ public class Items extends Stuff{
         this.description = description;
     }
 
-    public Wardrobe getType() {
+    public WardrobeItemType getType() {
         return type;
     }
 
-    public void setType(Wardrobe type) {
+    public void setType(WardrobeItemType type) {
         this.type = type;
     }
 
     public String toString() {
         return getClass().getName() + "\n"
-                +"Id: " + getId()+ "\n"
+                +"Id: " + getUuid()+ "\n"
                 +"Type: " + getType()+ "\n"
                 +"Purchased at: " + getPurchaseDay();
+    }
+
+    public static void main(String[] args) {
+        SimpleWardrobeFactory factory = new SimpleWardrobeFactory();
+        WardrobeItem dress = factory.createWardrobeItem(WardrobeItemType.DRESS, "Black",
+                500, 2021, 3, 8, "M");
+        System.out.println(dress.getDescription());
     }
 }

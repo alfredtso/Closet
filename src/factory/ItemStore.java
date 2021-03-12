@@ -1,6 +1,6 @@
 package factory;
 
-import simple.Items;
+import base.WardrobeItem;
 
 public class ItemStore {
     SimpleItemFactory factory;
@@ -9,8 +9,8 @@ public class ItemStore {
         this.factory = factory;
     }
 
-    public Items registerItem(String type) {
-        Items item;
+    public WardrobeItem registerItem(String type) {
+        WardrobeItem item;
 
         item = factory.createItem(type);
 

@@ -1,17 +1,20 @@
-package simple;
+package base;
+
+import strategy.WashBehaviour;
+import strategy.WaterWash;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Dress extends Items {
+public class Dress extends WardrobeItem {
 
     // program to the interface
     private WashBehaviour washBehaviour;
-    private SizeOfDress size;
+    private String size;
 
-    public Dress(String des, SizeOfDress size, double price, int year, int month, int day){
+    public Dress(String des, String size, double price, int year, int month, int day){
         super(des, price, year, month, day);
-        setType(Wardrobe.Dress);
+        setType(WardrobeItemType.DRESS);
         setSize(size);
         this.washBehaviour = new WaterWash();
     }
@@ -24,11 +27,11 @@ public class Dress extends Items {
         washBehaviour.lastWashed();
     }
 
-    public SizeOfDress getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(SizeOfDress size) {
+    public void setSize(String size) {
         this.size = size;
     }
     @Override
@@ -45,13 +48,13 @@ public class Dress extends Items {
     }
 
     public static void main(String[] args) {
-        Items[] clothset = new Items[2];
+        WardrobeItem[] clothset = new WardrobeItem[2];
 
         System.out.println("Populate the list using ArrayList and then convert back to Array for acc");
         // Use Array with ArrayList
         List<Dress> winterDress = new ArrayList<>();
-        Dress winDress1 = new Dress("White", SizeOfDress.L, 1500, 2020, 1, 4);
-        Dress winDress2 = new Dress("White", SizeOfDress.L, 500, 2020, 1, 4);
+        Dress winDress1 = new Dress("White", "L", 1500, 2020, 1, 4);
+        Dress winDress2 = new Dress("White", "L", 500, 2020, 1, 4);
         winterDress.add(winDress1);
         winterDress.add(winDress2);
 
@@ -62,11 +65,11 @@ public class Dress extends Items {
         // Can print everything!
         System.out.println(System.out);
 
-        clothset[0] = new Dress("Black", SizeOfDress.M, 1400.0, 2020, 1, 20);
+        clothset[0] = new Dress("Black", "M", 1400.0, 2020, 1, 20);
         System.out.println(clothset[0]);
-        clothset[1] = new Items("Earrings", 500, 2020, 12, 5);
+        clothset[1] = new WardrobeItem("Earrings", 500, 2020, 12, 5);
 
-        for (Items i: clothset) {
+        for (WardrobeItem i: clothset) {
             System.out.println("Item: " + i.getDescription());
         }
     }

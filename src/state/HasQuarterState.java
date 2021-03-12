@@ -1,7 +1,8 @@
 package state;
 
 public class HasQuarterState implements State {
-    GumballMachine gumballMachine;
+    private static final long serialVersionUID = 3L;
+    transient GumballMachine gumballMachine;
 
     public HasQuarterState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;

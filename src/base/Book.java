@@ -1,4 +1,4 @@
-package simple;
+package base;
 
 public class Book extends Stuff{
     private String bookName;
@@ -18,7 +18,7 @@ public class Book extends Stuff{
         Book[] books = new Book[2];
         Book core = new Book("Core Java Vol 1");
         System.out.println("The book i am reading: " + core.getDescription());
-        System.out.println("The id of which is: " + core.getId());
+        System.out.println("The id of which is: " + core.getUuid());
         System.out.println(core.equals(books[1]));
     }
 }
