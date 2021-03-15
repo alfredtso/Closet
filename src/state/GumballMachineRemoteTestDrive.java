@@ -1,8 +1,5 @@
 package state;
 
-import proxy.MyRemote;
-import proxy.MyRemoteImpl;
-
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 
